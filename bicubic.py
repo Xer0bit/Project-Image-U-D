@@ -86,10 +86,12 @@ def bicubic(img, ratio, a):
 img = cv2.imread('butterfly.png')
 
 # Scale factor
-ratio = 2
+ratio = 0.2
 # Coefficient
 a = -1/2
 
 dst = bicubic(img, ratio, a)
-print('Completed!')
-cv2.imwrite('bicubic_butterfly.png', dst)
+#get resolution
+H,W,C = dst.shape
+cv2.imwrite('butterfly_%d_%d.png' % (H,W), dst)
+
