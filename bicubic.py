@@ -93,5 +93,13 @@ a = -1/2
 dst = bicubic(img, ratio, a)
 #get resolution
 H,W,C = dst.shape
-cv2.imwrite('butterfly_%d_%d.png' % (H,W), dst)
 
+start = time.time()
+dst = bicubic(img, ratio, a)
+end = time.time()
+print('Elapsed time: %f sec' % (end - start))
+tspace = (H+4)*(W+4)*C*8/1024
+
+print('Space complexity: %f kb' % tspace)
+
+cv2.imwrite('butterfly_%d_%d.png' % (H,W), dst)
