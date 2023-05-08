@@ -99,6 +99,10 @@ dst = bicubic(img, ratio, a)
 end = time.time()
 print('Elapsed time: %f sec' % (end - start))
 tspace = (H+4)*(W+4)*C*8/1024
+# H is the height of the image
+# W is the width of the image
+# C is the number of channels of the image
+
 
 print('Space complexity: %f kb' % tspace)
 
